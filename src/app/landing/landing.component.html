@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <app-header></app-header>
+<div class="form">
+  <form action="">
+    <div class="form-group">
+        <label for="sel1">Task name:</label>
+    <input type="text" class="form-control" placeholder="Task name" required>
+    </div>
+    <div class="form-group" id="first">
+        <label for="sel1">Task type(select one):</label>
+      <select onchange="yesnoCheck();" class="form-control" id="sel2" name="sellist">
+        <option value="none">Human-executed</option>
+        <option value="none">Machine-executed</option>
+        <option value="none">Nature-executed</option>
+        <option value="other" id="me">Other</option>
+      </select>
+        <input type="text" class="form-control" placeholder="if other,please specify">
+    </div>
+    <div class="form-group">
+        <label for="sel1">Peak period of occurence(select one):</label>
+        <select class="form-control" id="sel2" name="sellist">
+          <option>Start of project</option>
+          <option>During project</option>
+          <option>After project</option>
+        </select>
+      <input type="text" class="form-control" placeholder="if other,please specify">
+      </div>
+      <div class="form-group">
+          <label for="sel1">Duration of occurence(select one):</label>
+          <select class="form-control" id="sel2" name="sellist">
+            <option>Short</option>
+            <option>Long-term</option>
+            <option>Occational</option>
+            <option>Rarely</option>
+          </select>
+        <input type="text" class="form-control" placeholder="if other,please specify">
+        </div>
+        <div class="form-group">
+            <label for="sel1">Influenced project segment(select one):</label>
+            <select class="form-control" id="sel2" name="sellist">
+              <option>Money</option>
+              <option>Completion time</option>
+              <option>Project personnel</option>
+            </select>
+          <input type="text" class="form-control" placeholder="if other,please specify">
+          </div>
+          <h3>Expert's mitigation opinion</h3>
+          <div class="form-group">
+              <label for="sel1">Avoidance action:</label>
+            <input type="text" class="form-control" placeholder="Avoidance action" required>
+            </div>
+            <div class="form-group">
+                <label for="sel1">Control action:</label>
+              <input type="text" class="form-control" placeholder="Control action" required>
+              </div>
+              <div class="form-group">
+                  <label for="sel1">Containment action:</label>
+                <input type="text" class="form-control" placeholder="Containment action" required>
+                </div>
+    <button class="btn btn-primary">submit</button>
+  </form>
+</div>
+</div>
