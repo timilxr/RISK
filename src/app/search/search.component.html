@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <app-header></app-header>
+  <div class="d-flex justify-content-center">
+<div class="col-lg-8">
+<form *ngIf="g==0" action="" id="myform">
+  <div class="form-group">
+      <label for="sel8">Task name:</label>
+  <input type="text" class="form-control" placeholder="Task name" [(ngModel)]= "riskModel.Taskname" name="sel8" required>
+  </div>
+  <div class="form-group" id="first">
+      <label for="sel1">Task type(select one):</label>
+    <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Tasktype" name="sel1">
+      <option value="Human-executed">Human-executed</option>
+      <option value="Machine-executed">Machine-executed</option>
+      <option value="Nature-executed">Nature-executed</option>
+      <option id="me">Other</option>
+    </select>
+      <input type="text" [(ngModel)]= "riskModel.Tasktype" name="sel1" class="form-control" placeholder="if other,please specify">
+  </div>
+  <div class="form-group">
+      <label for="sel2">Peak period of occurence(select one):</label>
+      <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Peakperiodofoccurence" name="sel2">
+        <option value="Start of project">Start of project</option>
+        <option value="During project">During project</option>
+        <option value="After project">After project</option>
+        <option >Other</option>
+      </select>
+    <input type="text" [(ngModel)]= "riskModel.Peakperiodofoccurence" name="sel2" class="form-control" placeholder="if other,please specify">
+    </div>
+    <div class="form-group">
+        <label for="sel3">Duration of occurence(select one):</label>
+        <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Durationofoccurence" name="sel3">
+          <option value="Short">Short</option>
+          <option value="Long-term">Long-term</option>
+          <option value="Occational">Occational</option>
+          <option value="Rarely">Rarely</option>
+          <option >Other</option>
+        </select>
+      <input type="text" [(ngModel)]= "riskModel.Durationofoccurence" name="sel3" class="form-control" placeholder="if other,please specify">
+      </div>
+      <div class="form-group">
+          <label for="sel4">Influenced project segment(select one):</label>
+          <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Influencedprojectsegment" name="sel4">
+            <option value="Money">Money</option>
+            <option value="Completion time">Completion time</option>
+            <option value="Project personnel">Project personnel</option>
+            <option >Other</option>
+          </select>
+        <input type="text" [(ngModel)]= "riskModel.Influencedprojectsegment" name="sel4" class="form-control" placeholder="if other,please specify">
+        </div>
+  <button class="btn btn-primary" (click)="find()">Search</button>
+</form>
+<div class="table-responsive-sm table-responsive-md table-responsive-lg">
+  <table *ngIf="g!=0" class="table table-responsive table-bordered table-dark table-striped">
+    <thead class="thead-dark">
+      <tr>
+      <th>Taskname</th>
+      <th>Tasktype</th>
+      <th>Control action</th>
+      <th>Containment action</th>
+      <th>Avoidance action</th>
+    </tr>
+    </thead>
+    <tbody id="detail">
+      <tr *ngFor="let rep of replyDATA">
+        <td>{{rep.Taskname}}</td>
+        <td>{{rep.Tasktype}}</td>
+        <td>{{rep.Controlaction}}</td>
+        <td>{{rep.Containmentaction}}</td>
+        <td>{{rep.Avoidanceaction}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>
+</div>

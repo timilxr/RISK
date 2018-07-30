@@ -1,0 +1,62 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+<app-header></app-header>
+<h1 *ngIf="g==1">Technical Risk</h1>
+<h1 *ngIf="g==2">Business Risk</h1>
+<h1 *ngIf="g==3">Personnel Risk</h1>
+<div>
+  <button (click)="calc(1)">Technical Risk</button>
+  <button (click)="calc(2)">Business Risk</button>
+  <button (click)="calc(3)">Personnel</button><del></del>
+</div>
+
+<div class="table-responsive-sm table-responsive-md table-responsive-lg">
+<table *ngIf="g!=0" class="table table-responsive table-bordered table-dark table-striped">
+  <thead class="thead-dark">
+    <tr>
+    <th>Taskname</th>
+    <th>Tasktype</th>
+    <th>Peakperiodofoccurence</th>
+    <th>Durationofoccurence</th>
+    <th>Influencedprojectsegment</th>
+    <th>Controlaction</th>
+    <th>Containmentaction</th>
+    <th>Avoidanceaction</th>
+    <th>Risk Category</th>
+    <th>Threat Level</th>
+    <th>Amount</th>
+    <th>Clientgoal</th>
+    <th>Equipment</th>
+    <th>Personnel</th>
+    <th>Stakeholders</th>
+  </tr>
+  </thead>
+  <tbody id="detail">
+    <tr *ngFor="let task of taskData">
+      <td>{{task.Taskname}}</td>
+      <td>{{task.Tasktype}}</td>
+      <td>{{task.Peakperiodofoccurence}}</td>
+      <td>{{task.Durationofoccurence}}</td>
+      <td>{{task.Influencedprojectsegment}}</td>
+      <td>{{task.Controlaction}}</td>
+      <td>{{task.Containmentaction}}</td>
+      <td>{{task.Avoidanceaction}}</td>
+      <td>{{task.Risk_category0}}</td>
+      <td>{{task.Threat_level0}}</td>
+      <td>{{task.Amount}}</td>
+      <td>{{task.Clientgoal}}</td>
+      <td>{{task.Equipment}}</td>
+      <td>{{task.Personnel}}</td>
+      <td>{{task.Stakeholders}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<app-footer></app-footer>
+</div>
+
+
+
+
+
+

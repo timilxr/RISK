@@ -1,11 +1,11 @@
 div{
     background-color: rgb(218, 213, 213);
 }
-textarea{
-    height: 100px;
-}
 label{
     font-weight: bold;
+}
+option{
+    color: black;
 }
 h2{
     color: purple;

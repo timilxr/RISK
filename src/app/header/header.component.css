@@ -1,3 +1,6 @@
 nav{
     background-color: purple;
 }
+a:hover{
+    color: dodgerblue !important;
+}

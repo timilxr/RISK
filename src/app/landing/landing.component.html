@@ -1,63 +1,69 @@
 <div class="container-fluid">
     <app-header></app-header>
-<div class="form">
-  <form action="">
+    <div class="d-flex justify-content-center">
+<div class="col-lg-8">
+  <form action="" id="myform">
     <div class="form-group">
-        <label for="sel1">Task name:</label>
-    <input type="text" class="form-control" placeholder="Task name" required>
+        <label for="sel8">Task name:</label>
+    <input type="text" class="form-control" placeholder="Task name" [(ngModel)]= "riskModel.Taskname" name="sel8" required>
     </div>
     <div class="form-group" id="first">
         <label for="sel1">Task type(select one):</label>
-      <select onchange="yesnoCheck();" class="form-control" id="sel2" name="sellist">
-        <option value="none">Human-executed</option>
-        <option value="none">Machine-executed</option>
-        <option value="none">Nature-executed</option>
-        <option value="other" id="me">Other</option>
+      <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Tasktype" name="sel1">
+        <option value="Human-executed">Human-executed</option>
+        <option value="Machine-executed">Machine-executed</option>
+        <option value="Nature-executed">Nature-executed</option>
+        <option id="me">Other</option>
       </select>
-        <input type="text" class="form-control" placeholder="if other,please specify">
+        <input type="text" [(ngModel)]= "riskModel.Tasktype" name="sel1" class="form-control" placeholder="if other,please specify">
     </div>
     <div class="form-group">
-        <label for="sel1">Peak period of occurence(select one):</label>
-        <select class="form-control" id="sel2" name="sellist">
-          <option>Start of project</option>
-          <option>During project</option>
-          <option>After project</option>
+        <label for="sel2">Peak period of occurence(select one):</label>
+        <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Peakperiodofoccurence" name="sel2">
+          <option value="Start of project">Start of project</option>
+          <option value="During project">During project</option>
+          <option value="After project">After project</option>
+          <option >Other</option>
         </select>
-      <input type="text" class="form-control" placeholder="if other,please specify">
+      <input type="text" [(ngModel)]= "riskModel.Peakperiodofoccurence" name="sel2" class="form-control" placeholder="if other,please specify">
       </div>
       <div class="form-group">
-          <label for="sel1">Duration of occurence(select one):</label>
-          <select class="form-control" id="sel2" name="sellist">
-            <option>Short</option>
-            <option>Long-term</option>
-            <option>Occational</option>
-            <option>Rarely</option>
+          <label for="sel3">Duration of occurence(select one):</label>
+          <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Durationofoccurence" name="sel3">
+            <option value="Short">Short</option>
+            <option value="Long-term">Long-term</option>
+            <option value="Occational">Occational</option>
+            <option value="Rarely">Rarely</option>
+            <option >Other</option>
           </select>
-        <input type="text" class="form-control" placeholder="if other,please specify">
+        <input type="text" [(ngModel)]= "riskModel.Durationofoccurence" name="sel3" class="form-control" placeholder="if other,please specify">
         </div>
         <div class="form-group">
-            <label for="sel1">Influenced project segment(select one):</label>
-            <select class="form-control" id="sel2" name="sellist">
-              <option>Money</option>
-              <option>Completion time</option>
-              <option>Project personnel</option>
+            <label for="sel4">Influenced project segment(select one):</label>
+            <select class="form-control" id="sel2" [(ngModel)]= "riskModel.Influencedprojectsegment" name="sel4">
+              <option value="Money">Money</option>
+              <option value="Completion time">Completion time</option>
+              <option value="Project personnel">Project personnel</option>
+              <option >Other</option>
             </select>
-          <input type="text" class="form-control" placeholder="if other,please specify">
+          <input type="text" [(ngModel)]= "riskModel.Influencedprojectsegment" name="sel4" class="form-control" placeholder="if other,please specify">
           </div>
-          <h3>Expert's mitigation opinion</h3>
+          <H2>Expert's mitigation opinion</H2>
           <div class="form-group">
-              <label for="sel1">Avoidance action:</label>
-            <input type="text" class="form-control" placeholder="Avoidance action" required>
+              <label for="sel5">Avoidance action:</label>
+            <textarea type="text" class="form-control" placeholder="Avoidance action" [(ngModel)]= "riskModel.Avoidanceaction" name="sel5" required></textarea>
             </div>
             <div class="form-group">
-                <label for="sel1">Control action:</label>
-              <input type="text" class="form-control" placeholder="Control action" required>
+                <label for="sel6">Control action:</label>
+              <textarea type="text" class="form-control" placeholder="Control action" [(ngModel)]= "riskModel.Controlaction" name="sel6" required></textarea>
               </div>
               <div class="form-group">
-                  <label for="sel1">Containment action:</label>
-                <input type="text" class="form-control" placeholder="Containment action" required>
+                  <label for="sel7">Containment action:</label>
+                <textarea type="text" class="form-control" placeholder="Containment action" [(ngModel)]= "riskModel.Containmentaction" name="sel7" required></textarea>
                 </div>
-    <button class="btn btn-primary">submit</button>
+    <button class="btn btn-primary" routerLink="/Goal" (click)="writeUserData()">Submit</button>
   </form>
 </div>
+</div>
+<app-footer></app-footer>
 </div>
