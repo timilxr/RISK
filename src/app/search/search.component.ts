@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
     this.replyDATA = [];
     firebase.database().ref('Tasks/').on('value', (snapshot) => {
       snapshot.forEach(childSnapshot=>{
-          if(childSnapshot.val().Taskname == this.riskModel.Taskname){
+          if(childSnapshot.val().Taskname == this.riskModel.Taskname && childSnapshot.val().Tasktype == this.riskModel.Tasktype){
             this.replyDATA.push(childSnapshot.val());
             this.g = 1;
             console.log(childSnapshot.val());

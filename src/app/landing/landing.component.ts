@@ -28,9 +28,12 @@ export class LandingComponent implements OnInit {
       if (error) {
         // The write failed...
         this.message("failed");
+        alert('Did not get your inputs,please check and try again.');
       } else {
         // Data saved successfully!
         console.log("successful");
+        alert('Got your inputs,please proceed.');
+        location.assign('/Goal');
         
       }
     });

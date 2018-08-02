@@ -1,16 +1,18 @@
-<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 <app-header></app-header>
+<div class="container-fluid">
+<div class="d-flex justify-content-center">
 <h1 *ngIf="g==1">Technical Risk</h1>
 <h1 *ngIf="g==2">Business Risk</h1>
 <h1 *ngIf="g==3">Personnel Risk</h1>
-<div>
-  <button (click)="calc(1)">Technical Risk</button>
-  <button (click)="calc(2)">Business Risk</button>
-  <button (click)="calc(3)">Personnel</button><del></del>
+</div>
+<div class="d-flex justify-content-center">
+  <button class="btn btn-info" (click)="calc(1)">Technical Risk</button>
+  <button class="btn btn-info" (click)="calc(2)">Business Risk</button>
+  <button class="btn btn-info" (click)="calc(3)">Personnel</button><del></del>
 </div>
 
 <div class="table-responsive-sm table-responsive-md table-responsive-lg">
-<table *ngIf="g!=0" class="table table-responsive table-bordered table-dark table-striped">
+<table class="table table-responsive table-bordered table-dark table-striped">
   <thead class="thead-dark">
     <tr>
     <th>Taskname</th>
@@ -30,7 +32,7 @@
     <th>Stakeholders</th>
   </tr>
   </thead>
-  <tbody id="detail">
+  <tbody *ngIf="g!=0" id="detail">
     <tr *ngFor="let task of taskData">
       <td>{{task.Taskname}}</td>
       <td>{{task.Tasktype}}</td>
@@ -51,9 +53,9 @@
   </tbody>
 </table>
 </div>
-
-<app-footer></app-footer>
 </div>
+<app-footer></app-footer>
+
 
 
 

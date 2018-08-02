@@ -10,3 +10,9 @@ option{
 h2{
     color: purple;
 }
+.container-fluid{
+    min-height: 500px;
+}
+.d-flex{
+    padding-top: 90px;
+}

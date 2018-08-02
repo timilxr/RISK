@@ -43,24 +43,33 @@ export class RiskEvaluationComponent implements OnInit {
       firebase.database().ref('Tasks/'+ this.userId).update(this.recLow, function(error) {
         if (error) {
           console.log("failed");
+          alert('Did not get your inputs,please check and try again.');
         } else {
           console.log("successful");
+          alert('Got your inputs,Thank you.');
+        location.assign('/data');
         }
       });
     } else if(newMoel.impact >= 3 && newMoel.impact <= 6){
       firebase.database().ref('Tasks/'+ this.userId).update(this.recMed, function(error) {
         if (error) {
           console.log("failed");
+          alert('Did not get your inputs,please check and try again.');
         } else {
           console.log("successful");
+          alert('Got your inputs,Thank you.');
+        location.assign('/data');
         }
       });
     } else if(newMoel.impact >= 6 && newMoel.impact <= 8){
       firebase.database().ref('Tasks/'+ this.userId).update(this.recHigh, function(error) {
         if (error) {
           console.log("failed");
+          alert('Did not get your inputs,please check and try again.');
         } else {
           console.log("successful");
+          alert('Got your inputs,Thank you.');
+        location.assign('/data');
         }
       });
     }
@@ -75,8 +84,7 @@ export class RiskEvaluationComponent implements OnInit {
         var uid = user.uid;
         // ...
         this.userId = firebase.auth().currentUser.uid;
-        
-  
+
       } 
     else {
         // User is signed out.

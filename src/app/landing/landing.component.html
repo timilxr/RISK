@@ -1,5 +1,5 @@
+<app-header></app-header>
 <div class="container-fluid">
-    <app-header></app-header>
     <div class="d-flex justify-content-center">
 <div class="col-lg-8">
   <form action="" id="myform">
@@ -61,9 +61,9 @@
                   <label for="sel7">Containment action:</label>
                 <textarea type="text" class="form-control" placeholder="Containment action" [(ngModel)]= "riskModel.Containmentaction" name="sel7" required></textarea>
                 </div>
-    <button class="btn btn-primary" routerLink="/Goal" (click)="writeUserData()">Submit</button>
+    <button class="btn btn-primary" (click)="writeUserData()">Submit</button>
   </form>
 </div>
 </div>
-<app-footer></app-footer>
 </div>
+<app-footer></app-footer>

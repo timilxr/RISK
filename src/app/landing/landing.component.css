@@ -10,3 +10,6 @@ label{
 h2{
     color: purple;
 }
+.container-fluid{
+    min-height: 500px;
+}

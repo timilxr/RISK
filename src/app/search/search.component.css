@@ -1,6 +1,3 @@
-input,select{
-    background-color: rgb(218, 213, 213);
-}
 textarea{
     height: 100px;
 }
@@ -9,4 +6,10 @@ label{
 }
 h2{
     color: purple;
+}
+div{
+    background-color: rgb(218, 213, 213);
+}
+.container-fluid{
+    min-height: 500px;
 }

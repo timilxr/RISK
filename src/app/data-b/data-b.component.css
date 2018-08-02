@@ -1,0 +1,9 @@
+.container-fluid{
+    min-height: 500px;
+}
+div{
+    background-color: rgb(218, 213, 213);
+}
+button{
+    margin: 10px;
+}

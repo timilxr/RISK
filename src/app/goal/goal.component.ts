@@ -23,14 +23,17 @@ export class GoalComponent implements OnInit {
 // });
 //   }
 
-  writeUserData2(Clientgoal,Stakeholders,Amount,Equipment,Personnel) {
+  writeUserData2() {
     firebase.database().ref('Tasks/'+ this.userId).update(this.goalModel, function(error) {
       if (error) {
         // The write failed...
         console.log("failed");
+        alert('Did not get your record,please check and try again.');
       } else {
         // Data saved successfully!
         console.log("successful");
+        alert('Got your inputs,please proceed.');
+        location.assign('/Risk Evaluation');
       }
     });
   }
@@ -52,7 +55,7 @@ export class GoalComponent implements OnInit {
         // ...
       }
       // ...
-    })
+    });
   }
 
 }
