@@ -31,7 +31,7 @@ export class LandingComponent implements OnInit {
         alert('Did not get your inputs,please check and try again.');
       } else {
         // Data saved successfully!
-        console.log("successful");
+        // console.log("successful");
         alert('Got your inputs,please proceed.');
         location.assign('/Goal');
         
@@ -58,13 +58,13 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
     firebase.database().ref('Tasks/').on('value', function(snapshot) {
-      console.log(snapshot.key);
+      // console.log(snapshot.key);
     });
     firebase.auth().signInAnonymously().catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(errorCode,errorMessage);
+      // console.log(errorCode,errorMessage);
       // ...
     });
     firebase.auth().onAuthStateChanged((user) =>{

@@ -28,8 +28,8 @@ export class SearchComponent implements OnInit {
           if(childSnapshot.val().Taskname == this.riskModel.Taskname && childSnapshot.val().Tasktype == this.riskModel.Tasktype){
             this.replyDATA.push(childSnapshot.val());
             this.g = 1;
-            console.log(childSnapshot.val());
-            console.log('hi');
+            // console.log(childSnapshot.val());
+            // console.log('hi');
           }
           else{
             location.assign('Home');
@@ -40,13 +40,13 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     firebase.database().ref('Tasks/').on('value', function(snapshot) {
-      console.log(snapshot.key);
+      // console.log(snapshot.key);
     });
     firebase.auth().signInAnonymously().catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(errorCode,errorMessage);
+      // console.log(errorCode,errorMessage);
       // ...
     });
     firebase.auth().onAuthStateChanged((user) =>{

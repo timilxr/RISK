@@ -82,7 +82,6 @@ export class DataBComponent implements OnInit {
   //   });
 
   //   console.log(this.userButton);
-  console.log(this.lowData);
   // });
 }
 }

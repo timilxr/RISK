@@ -29,7 +29,7 @@ export class RiskEvaluationComponent implements OnInit {
  
   constructor() { 
     firebase.database().ref('risk evaluation/').on('value', function(snapshot) {
-      console.log(snapshot.val());
+      // console.log(snapshot.val());
     });
   }
 
@@ -42,10 +42,10 @@ export class RiskEvaluationComponent implements OnInit {
     if (newMoel.impact >= 0.4 && newMoel.impact <= 3) {
       firebase.database().ref('Tasks/'+ this.userId).update(this.recLow, function(error) {
         if (error) {
-          console.log("failed");
+          // console.log("failed");
           alert('Did not get your inputs,please check and try again.');
         } else {
-          console.log("successful");
+          // console.log("successful");
           alert('Got your inputs,Thank you.');
         location.assign('/data');
         }
@@ -53,10 +53,10 @@ export class RiskEvaluationComponent implements OnInit {
     } else if(newMoel.impact >= 3 && newMoel.impact <= 6){
       firebase.database().ref('Tasks/'+ this.userId).update(this.recMed, function(error) {
         if (error) {
-          console.log("failed");
+          // console.log("failed");
           alert('Did not get your inputs,please check and try again.');
         } else {
-          console.log("successful");
+          // console.log("successful");
           alert('Got your inputs,Thank you.');
         location.assign('/data');
         }
@@ -64,10 +64,10 @@ export class RiskEvaluationComponent implements OnInit {
     } else if(newMoel.impact >= 6 && newMoel.impact <= 8){
       firebase.database().ref('Tasks/'+ this.userId).update(this.recHigh, function(error) {
         if (error) {
-          console.log("failed");
+          // console.log("failed");
           alert('Did not get your inputs,please check and try again.');
         } else {
-          console.log("successful");
+          // console.log("successful");
           alert('Got your inputs,Thank you.');
         location.assign('/data');
         }
